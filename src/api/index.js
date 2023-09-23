@@ -12,7 +12,7 @@ export const getPlaces = async (ne, sw) => {
         bl_latitude: sw.lat,
         tr_latitude: ne.lat,
         bl_longitude: sw.lng,
-        tr_longitude: sw.lng,
+        tr_longitude: ne.lng,
       },
       headers: {
         "X-RapidAPI-Key": "10ccb6f7famshac4f1631e0cdb1ep15b482jsnfc4c128537a9",

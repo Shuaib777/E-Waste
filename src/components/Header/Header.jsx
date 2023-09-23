@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <div className="title">Travel advisor</div>
+        <div className="title">E-waste</div>
         <div className="search">
           <span>Explore new Places</span>
           <div className="inputDiv">

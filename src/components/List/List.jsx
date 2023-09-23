@@ -2,22 +2,8 @@ import React, { useState } from "react";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import "./styles.css";
 
-const List = () => {
+const List = ({ places }) => {
   const [type, setType] = useState("California");
-  const places = [
-    { name: "cal" },
-    { name: "dal" },
-    { name: "sal" },
-    { name: "cal" },
-    { name: "dal" },
-    { name: "sal" },
-    { name: "cal" },
-    { name: "dal" },
-    { name: "sal" },
-    { name: "cal" },
-    { name: "dal" },
-    { name: "sal" },
-  ];
   return (
     <div>
       <h1>Places</h1>
