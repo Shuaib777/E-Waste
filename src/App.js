@@ -24,6 +24,7 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     getPlaces(bounds.ne, bounds.sw).then((data) => {
+      console.log(data);
       setPlaces(data);
       setIsLoading(false);
     });

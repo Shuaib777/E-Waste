@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { LocationOnOutlined } from "@mui/icons-material";
+import mapStyles from "./mapStyles";
 
 const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
   const handleChange = (e) => {
@@ -8,14 +9,24 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
   };
   return (
-    <div className="Map" style={{ height: "80vh", width: "100%" }}>
+    <div
+      className="Map"
+      style={{
+        height: "80vh",
+        width: "100%",
+      }}
+    >
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyB4SKoFANY5cnHBFwpkB6VH-dF0RbNcloE" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_kEY }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={15}
         margin={[50, 50, 50, 50]}
-        options={""}
+        options={{
+          disableDefaultUI: true,
+          zoomControl: true,
+          styles: mapStyles,
+        }}
         onChange={(e) => handleChange(e)}
         onChildClick={""}
       >
