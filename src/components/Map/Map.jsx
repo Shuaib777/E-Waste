@@ -1,7 +1,8 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import { LocationOnOutlined } from "@mui/icons-material";
 
-const Map = ({ setCoordinates, setBounds, coordinates }) => {
+const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
   const handleChange = (e) => {
     setCoordinates({ lat: e.center.lat, lng: e.center.lng });
     setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
@@ -17,7 +18,16 @@ const Map = ({ setCoordinates, setBounds, coordinates }) => {
         options={""}
         onChange={(e) => handleChange(e)}
         onChildClick={""}
-      ></GoogleMapReact>
+      >
+        {places?.map((place) => (
+          <div lat={Number(place.latitude)} lng={Number(place.longitude)}>
+            <LocationOnOutlined
+              color="primary"
+              fontSize="large"
+            ></LocationOnOutlined>
+          </div>
+        ))}
+      </GoogleMapReact>
     </div>
   );
 };

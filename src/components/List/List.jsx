@@ -6,8 +6,8 @@ const List = ({ places }) => {
   const [type, setType] = useState("California");
   return (
     <div>
-      <h1>Places</h1>
-      <form style={{ flexDirection: "row" }}>
+      <h1>Nearest E-waste Center</h1>
+      {/* <form style={{ flexDirection: "row" }}>
         <span style={{ display: "inline" }}>Place</span>
         <select
           value={type}
@@ -19,7 +19,7 @@ const List = ({ places }) => {
           <option value="forza3">forza3</option>
           <option value="forza4">forza4</option>
         </select>
-      </form>
+      </form> */}
       <div className="list">
         {places?.map((place, i) => (
           <PlaceDetails key={i} place={place}></PlaceDetails>
