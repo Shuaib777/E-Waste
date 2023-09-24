@@ -6,6 +6,7 @@ import Map from "./components/Map/Map";
 import { Backdrop, CircularProgress } from "@mui/material";
 import "./App.css";
 import { getPlaces } from "./api/index";
+import { data } from "./data.js";
 
 const App = () => {
   const [places, setPlaces] = useState([]);
@@ -22,12 +23,13 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    setIsLoading(true);
-    getPlaces(bounds.ne, bounds.sw).then((data) => {
-      console.log(data);
-      setPlaces(data);
-      setIsLoading(false);
-    });
+    // setIsLoading(true);
+    // getPlaces(bounds.ne, bounds.sw).then((data) => {
+    //   console.log(data);
+    //   setPlaces(data);
+    //   setIsLoading(false);
+    // });
+    setPlaces(data);
   }, [coordinates, bounds]);
 
   return (
@@ -47,7 +49,7 @@ const App = () => {
                 <CircularProgress color="inherit" />
               </Backdrop>
             )}
-            <List places={places}></List>
+            <List places={places} setCoordinates={setCoordinates}></List>
           </Grid>
           <Grid item xs={12} md={8}>
             <Map

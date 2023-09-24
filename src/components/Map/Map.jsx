@@ -12,8 +12,10 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
     <div
       className="Map"
       style={{
-        height: "80vh",
+        margin: "10px",
+        height: "85vh",
         width: "100%",
+        border: "1px solid black",
       }}
     >
       <GoogleMapReact

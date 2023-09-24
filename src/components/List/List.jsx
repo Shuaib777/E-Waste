@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import "./styles.css";
 
-const List = ({ places }) => {
+const List = ({ places, setCoordinates }) => {
   const [type, setType] = useState("California");
   return (
     <div>
@@ -22,7 +22,11 @@ const List = ({ places }) => {
       </form> */}
       <div className="list">
         {places?.map((place, i) => (
-          <PlaceDetails key={i} place={place}></PlaceDetails>
+          <PlaceDetails
+            key={i}
+            place={place}
+            setCoordinates={setCoordinates}
+          ></PlaceDetails>
         ))}
       </div>
     </div>

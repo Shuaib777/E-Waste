@@ -107,7 +107,7 @@ const Register = () => {
         </Backdrop>
       )}
       <div className="formWrapper">
-        <span className="logo">Chatter</span>
+        <span className="logo">E-Waste</span>
         <span className="title">Register</span>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Name" />
