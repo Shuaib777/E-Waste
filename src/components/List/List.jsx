@@ -7,10 +7,8 @@ const List = ({ places }) => {
   return (
     <div>
       <h1>Places</h1>
-      <form>
-        <label htmlFor="places" style={{ marginRight: "10px" }}>
-          place
-        </label>
+      <form style={{ flexDirection: "row" }}>
+        <span style={{ display: "inline" }}>Place</span>
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
